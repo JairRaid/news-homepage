@@ -48,3 +48,5 @@ I learned to create an hamburger menu.
 
 ## Author
 
+- email: rakotonirainyriija@gmail.com
+- facebook: https://web.facebook.com/jair.rakoto.3/
