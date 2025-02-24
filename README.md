@@ -29,7 +29,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: https://github.com/JairRaid/news-homepage
-- Live Site URL: 
+- Live Site URL: https://jairraid.github.io/news-homepage/
 
 ## My process
 
