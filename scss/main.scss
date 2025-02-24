@@ -1,0 +1,363 @@
+//Font
+@font-face {
+    font-family: 'Inter';
+    src: url('../assets/fonts/Inter-VariableFont_slnt,wght.ttf')format('truetype');
+}
+
+//Colors
+$almost-white: #FFFDFA;
+$dark-space-blue: #00001A;
+$gunmetal: #5E607A;
+$light-vermillion: #F15D51;
+$silver: #C5C6CE;
+$yellow: #E9AA52;
+
+//Typo
+@mixin typography($size, $color, $weight, $line-height, $letter-spacing) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+//Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+//Styling
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+@media(max-width: 48rem) {
+    body {
+        padding: 28px 16px 80px 16px;
+    }
+
+    //Header
+    header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 32px;
+
+        nav {
+            position: fixed;
+            z-index: 2;
+            top: 0;
+            right: -256px;
+            width: 256px;
+            background-color: $almost-white;
+            height: 100%;
+            padding: 144px 29px 0 24px;
+            backdrop-filter: blur(10px);
+            transition: right 0.3s ease;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 24px 0;
+        }
+
+        #close-menu {
+            position: absolute;
+            top: 27.3px;
+            right: 20.8px;
+            cursor: pointer;
+        }
+
+        img {
+            cursor: pointer;
+        }
+    }
+
+    h1 {
+        img {
+            width: 44.98px;
+        }
+    }
+
+    //Main
+    article {
+        img[alt="web 3.0 illustration"] {
+            width: 100%;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            @include typography(2.5rem, $dark-space-blue, 800, 40px, 0);
+            margin-bottom: 16px;
+        }
+
+        div.text p {
+            @include typography(.937rem, $gunmetal, 400, 26px, 0);
+            margin-bottom: 24px;
+        }
+
+        a.read-more {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            @include typography(.875rem, $dark-space-blue, 700, 24px, 4.38px);
+            width: 185px;
+            height: 48px;
+            background-color: $light-vermillion;
+            margin-bottom: 64px;
+        }
+    }
+
+    //Aside
+    aside {
+        background-color: $dark-space-blue;
+        padding: 24px 20px 24px 20px;
+        margin-bottom: 64px;
+
+        h3 {
+            @include typography(2rem, $yellow, 700, 32px, 0);
+            margin-bottom: 35px;
+        }
+
+        h4 {
+            @include typography(1.25rem, $almost-white, 700, 24px, 0);
+            margin-bottom: 8px;
+        }
+
+        h4 + p {
+            @include typography(.937rem, $silver, 400, 26px, 0);
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #5E607A;
+            margin: 29px 0 31px 0;
+        }
+    }
+
+    //Second section
+    .second {
+        padding-bottom: 80px;
+    }
+
+    .second article {
+        display: flex;
+        align-items: center;
+        gap: 0 24px;
+        margin-bottom: 32px;
+    }
+
+    .second img {
+        width: 100px;
+    }
+
+    .group1 {
+        h3 {
+            @include typography(2rem, $light-vermillion, 700, 32px, 0);
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            @include typography(1.125rem, $dark-space-blue, 800, 24px, 0);
+            margin-bottom: 9px;
+        }
+
+        p {
+            @include typography(.937rem, $gunmetal, 400, 26px, 0);
+        }
+    }
+}
+
+@media(min-width: 48.063rem) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 90px 32px 0 32px;
+    }
+
+    header,
+    main {
+        max-width: 1110px;
+    }
+
+    header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 50px;
+
+        h1 {
+            margin-right: auto;
+        }
+
+        ul {
+            display: flex;
+            gap: 0 40px;
+        }
+
+        img[alt="close icon"],
+        img[alt="menu icon"] {
+            display: none;
+        }
+    }
+
+    //Main
+
+    //Grid layout
+    main {
+        display: grid;
+        grid-template: auto / repeat(3, 1fr);
+        gap: 71px 30px;
+    }
+
+    main section:first-child {
+        grid-row: 1 / 3;
+        grid-column: 1 / 3;
+    }
+
+    aside {
+        grid-row: 1 / 3;
+        grid-column: 3;
+    }
+
+    .second {
+        grid-row: 3;
+        grid-column: 1/4;
+    }
+
+    .first article {
+        display: grid;
+        grid-template: auto / repeat(2, 1fr);
+        gap: 30px 30px;
+    }
+
+    .first picture {
+        grid-row: 1;
+        grid-column: 1/3;
+    }
+
+    //Styling
+    article {
+        img[alt="web 3.0 illustration"] {
+            width: 100%;
+        }
+
+        h2 {
+            @include typography(3.5rem, $dark-space-blue, 800, 56px, 0);
+        }
+
+        div.text p {
+            @include typography(.937rem, $gunmetal, 400, 26px, 0);
+            margin-bottom: 29px;
+        }
+
+        a.read-more {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-transform: uppercase;
+            @include typography(.875rem, $dark-space-blue, 700, 24px, 4.38px);
+            width: 185px;
+            height: 48px;
+            background-color: $light-vermillion;
+        }
+    }
+
+    //Aside
+    aside {
+        background-color: $dark-space-blue;
+        padding: 32px 24px 31px 24px;
+
+        h3 {
+            @include typography(2rem, $yellow, 700, 32px, 0);
+            margin-bottom: 34px;
+        }
+
+        h4 {
+            @include typography(1.25rem, $almost-white, 700, 24px, 0);
+            margin-bottom: 8px;
+        }
+
+        h4 + p {
+            @include typography(.937rem, $silver, 400, 26px, 0);
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #5E607A;
+            margin: 29px 0 31px 0;
+        }
+    }
+
+    //Second section
+    .second {
+        display: flex;
+        padding-bottom: 80px;
+        gap: 0 5px;
+    }
+
+    .second article {
+        display: flex;
+        align-items: flex-start;
+        gap: 0 24px;
+    }
+
+    .second img {
+        width: 100px;
+    }
+
+    .group1 {
+        h3 {
+            @include typography(2rem, $light-vermillion, 700, 32px, 0);
+            margin-bottom: 12px;
+        }
+
+        h4 {
+            @include typography(1.125rem, $dark-space-blue, 800, 24px, 0);
+            margin-bottom: 9px;
+        }
+
+        p {
+            @include typography(.937rem, $gunmetal, 400, 26px, 0);
+        }
+    }
+}
+
+nav a:hover,
+h4 a:hover {
+    color: $light-vermillion;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: visibility 0.3s ease-in-out;
+}
+
+.hide {
+    visibility: hidden;
+}
